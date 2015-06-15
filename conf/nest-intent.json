@@ -1,0 +1,25 @@
+{
+  "intents": [
+    {
+      "intent": "AirConditionIntent",
+      "slots": [
+        {
+          "name": "Temperature",
+          "type": "NUMBER"
+        },
+        {
+        	"name": "State",
+        	"type": "LITERAL"
+        }
+      ]
+    },
+    {
+    	"intent": "TemperatureIntent",
+    	"slots": []
+    },
+    {
+    	"intent": "HelpIntent",
+    	"slots": []
+    }
+  ]
+}
