@@ -6,20 +6,25 @@
         {
           "name": "Temperature",
           "type": "NUMBER"
-        },
-        {
-        	"name": "State",
-        	"type": "LITERAL"
         }
       ]
     },
     {
-    	"intent": "TemperatureIntent",
-    	"slots": []
+      "intent": "ThermostatIntent",
+      "slots": [
+        {
+          "name": "State",
+          "type": "LITERAL"
+        }
+      ]
     },
     {
-    	"intent": "HelpIntent",
-    	"slots": []
+      "intent": "TemperatureIntent",
+      "slots": []
+    },
+    {
+      "intent": "HelpIntent",
+      "slots": []
     }
   ]
 }

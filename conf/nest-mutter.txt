@@ -54,14 +54,18 @@ AirConditionIntent set thermostat to {seventy four|Temperature}
 AirConditionIntent set thermostat to {seventy five|Temperature}
 AirConditionIntent set thermostat to {seventy six|Temperature}
 AirConditionIntent set thermostat to {sixty nine|Temperature}
-AirConditionIntent turn it {up|State}
-AirConditionIntent turn it {down|State}
-AirConditionIntent turn it {off|State}
-AirConditionIntent turn it {on|State}
-AirConditionIntent turn the thermostat {up|State}
-AirConditionIntent turn the thermostat {down|State}
-AirConditionIntent turn the thermostat {off|State}
-AirConditionIntent turn the thermostat {on|State}
+ThermostatIntent turn it {up|State}
+ThermostatIntent turn it {down|State}
+ThermostatIntent turn it {off|State}
+ThermostatIntent turn it {on|State}
+ThermostatIntent turn the thermostat {up|State}
+ThermostatIntent turn the thermostat {down|State}
+ThermostatIntent turn the thermostat {off|State}
+ThermostatIntent turn the thermostat {on|State}
+ThermostatIntent turn {up|State} the thermostat 
+ThermostatIntent turn {down|State} the thermostat 
+ThermostatIntent turn {off|State} the thermostat 
+ThermostatIntent turn {on|State} the thermostat 
 TemperatureIntent what is the temparature
 TemperatureIntent how hot is it
 TemperatureIntent how how it it in here

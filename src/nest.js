@@ -72,19 +72,20 @@ function onIntent(intentRequest, session, callback) {
     console.log("onIntent requestId=" + intentRequest.requestId
                 + ", sessionId=" + session.sessionId);
 
+
     var intent = intentRequest.intent,
         intentName = intentRequest.intent.name;
-
+    
+    console.log("Intent: " + intentName)
+    
     if ("AirConditionIntent" === intentName) {
-        if(intent.slots.Temperature === undefined){
-            console.log("set thermostat");
-            setThermostat(intent, session, callback);
-        } else {
-            console.log("set temperature");
-            setTemperature(intent, session, callback);
-        }
-        
-    } else if ("TemperatureIntent" === intentName) {
+        console.log("set temperature");
+        setTemperature(intent, session, callback);
+    } else if ("ThermostatIntent" === intentName){
+        console.log("set thermostat");
+        setThermostat(intent, session, callback);       
+    }
+    else if ("TemperatureIntent" === intentName) {
         getTemperature(intent, session, callback);
     }  else if ("HelpIntent" === intentName){
         help(intent, session, callback);
