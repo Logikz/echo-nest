@@ -3,6 +3,8 @@
  */
 var https = require('https');
 var intentContext = null;
+var stateId = "CHANGEME";
+var serverHost = "SETME";
 
 // Route the incoming request based on type (LaunchRequest, IntentRequest,
 // etc.) The JSON body of the request is provided in the event parameter.
@@ -237,6 +239,7 @@ function help(intent, session, callback) {
         buildSpeechletResponse(intent.name, speechOutput, repromptText, shouldEndSession));   
 }
 
+//creates a random state ID
 function getNestStateId() {
     var hexChars = ['a', 'b', 'c', 'd', 'e', 'f', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     var id = "";
@@ -248,9 +251,8 @@ function getNestStateId() {
 }
 
 function setTemperatureOnNest(temperature, callback){
-    var stateId = "logikz";//getNestStateId();    
     var authOptions = {
-        hostname: "server.host",
+        hostname: serverHost,
         port: 443,
         path: "/nest/" + stateId + "/temperature/",
         method: "PUT",
@@ -272,9 +274,8 @@ function setTemperatureOnNest(temperature, callback){
 }
 
 function setThermostatOnNest(state, callback){
-    var stateId = "logikz";//getNestStateId();    
     var authOptions = {
-        hostname: "server.host",
+        hostname: serverHost,
         port: 443,
         path: "/nest/" + stateId + "/thermostat/",
         method: "PUT",
@@ -297,9 +298,8 @@ function setThermostatOnNest(state, callback){
 }
 
 function getTemperatureFromNest(callback){
-    var stateId = "logikz";
     var authOptions = {
-        hostname: "server.host",
+        hostname: serverHost,
         port: 443,
         path: "/nest/" + stateId + "/temperature/",
         method: "GET",
