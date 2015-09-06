@@ -74,7 +74,8 @@ function onIntent(intentRequest, session, callback) {
     console.log("onIntent requestId=" + intentRequest.requestId
                 + ", sessionId=" + session.sessionId);
 
-
+    //wake up the service incase it went asleep
+    pingService();
     var intent = intentRequest.intent,
         intentName = intentRequest.intent.name;
     
@@ -325,4 +326,22 @@ function getTemperatureFromNest(callback){
     
     request.end();
     console.log("request ended");
+}
+
+function pingService(){
+    var authOptions = {
+        hostname: serverHost,
+        port: 443,
+        path: "/nest/ping",
+        method: "GET",
+        headers: {
+           'Accept': '*/*',
+           'Content-Type': 'text/plain'
+        }
+    };
+    var request = https.request(authOptions, function(response){
+        console.log(response.statusCode);        
+    });
+    
+    request.end();
 }
